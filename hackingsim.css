@@ -1,0 +1,107 @@
+:root {
+    --bg: #071b06;
+    /* deep green */
+    --panel: rgba(0, 0, 0, 0.55);
+    --text: #9ef08d;
+    --muted: #4aa86b;
+    --mono: "Courier New", Courier, monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text);
+    font-family: var(--mono);
+}
+
+body {
+    background-color: var(--bg);
+}
+
+p {
+    color: var(--text);
+    font-size: 20px;
+}
+
+.terminal {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+
+
+.btn {
+    margin: 10px;
+    cursor: pointer;
+    padding: 1em 2em;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    color: var(--panel);
+    font-weight: bolder;
+    font-size: 18px;
+    background-color: #9ef08d;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #9df08dc2;
+    transform: scale(1.2);
+    border-radius: 25px;
+}
+
+.dots {
+    display: inline-flex;
+    gap: 0.2rem;
+    margin-left: 0.3rem;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #9ef08d;
+    /* green */
+    opacity: 0.2;
+    animation: blinkDot 1s infinite ease-in-out;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes blinkDot {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
